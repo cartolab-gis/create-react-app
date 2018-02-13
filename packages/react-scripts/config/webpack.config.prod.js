@@ -170,7 +170,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, path.resolve(__dirname, '../node_modules/')],
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
