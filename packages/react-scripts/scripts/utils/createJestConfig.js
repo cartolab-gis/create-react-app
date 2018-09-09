@@ -75,7 +75,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     if (unsupportedKeys.length) {
       console.error(
         chalk.red(
-          'Out of the box, Create React App only supports overriding ' +
+          'Out of the box!, Create React App only supports overriding ' +
             'these Jest options:\n\n' +
             supportedKeys.map(key => chalk.bold('  \u2022 ' + key)).join('\n') +
             '.\n\n' +
