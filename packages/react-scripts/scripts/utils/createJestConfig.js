@@ -40,7 +40,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
       ),
     },
     // transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$', "/node_modules/(?!(ol|labelgun|mapbox-to-ol-style|ol-mapbox-style)/).*/"],
-    transformIgnorePatterns: ["/node_modules/(?!(ol|labelgun|mapbox-to-ol-style|ol-mapbox-style)/).*/"],
+    transformIgnorePatterns: [ ["/node_modules/(?!(ol)/).*/", "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"]],
     moduleNameMapper: {
       '^react-native$': 'react-native-web',
     },
