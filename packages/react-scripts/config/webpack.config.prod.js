@@ -170,12 +170,14 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: [paths.appSrc, paths.appNodeModules],
+            include: [paths.appSrc, paths.appNodeModules, ],
+            exclude: /node_modules\/(?!(@mapbox|ol-mapbox-style)\/).*/,
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
               babelrc: false,
               presets: [require.resolve('babel-preset-react-app')],
+              plugins: ['babel-plugin-transform-flow-strip-types'],
               // @remove-on-eject-end
               compact: true,
             },

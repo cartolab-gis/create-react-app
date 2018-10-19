@@ -165,7 +165,8 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, paths.appNodeModules/* path.resolve(__dirname, 'node_modules/@mapbox'), path.resolve(__dirname, 'node_modules/ol-mapbox-style') */],
+            exclude: /node_modules\/(?!(@mapbox|ol-mapbox-style)\/).*/,
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
